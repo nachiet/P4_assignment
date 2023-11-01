@@ -1,5 +1,5 @@
 from haversine import haversine
-from Assignment_P4.P4_assignment.myhaversine import myhaversine
+from myhaversine import myhaversine
 
 # Some locations
 d={

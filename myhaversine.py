@@ -1,4 +1,4 @@
-from Assignment_P4.P4_assignment.myfunctions import mysqrt, mycos, myarcsin, mysin, get_decimal,deg2rad
+from myfunctions import mysqrt, mycos, myarcsin, mysin, get_decimal,deg2rad
 
 def main():
     lat1=get_decimal('Latitude 1st point in decimal degrees',-90,90)
