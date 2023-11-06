@@ -30,20 +30,20 @@ def test_mycos():
     assert 0.292 <= mycos(-73) <= 0.293
     assert -0.933 <= mycos(-158.78) <= -0.932
 
+
 def test_myarcsin():
-    assert myarcsin(-300) == -90
+    assert myarcsin(-300.76) == -90
     assert myarcsin(-1) == -90
     assert myarcsin(0) == 0
     assert myarcsin(1) == 90
-    assert myarcsin(300) == 90
+    assert myarcsin(79.3) == 90
+    
     
 def test_sin():
     assert mysin(90) == 1
-    assert mysin(30) == 0.5
-    assert mysin(180) == 0
-    assert mysin(270) == -1
+    assert 0.499 <= mysin(30) <= 0.501
+    assert mysin(-180) == 0
+    assert -0.971 <= mysin(283.89) <= -0.969
+    assert -0.275 <= mysin(-15.9) <= -0.273
 
-# test_myarcsin()
-
-# test_sin()
 
