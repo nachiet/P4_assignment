@@ -1,8 +1,14 @@
 from myhaversine import myhaversine, mysqrt, mycos, myarcsin, mysin
+from haversine import haversine
 import numpy as np
 
 def test_myhaversine():
-    pass
+    assert (haversine((-90, -180), (90, 180)) - 0.001) <= myhaversine((-90, -180), (90, 180)) <= (haversine((-90, -180), (90, 180)) + 0.001)
+    assert (haversine((90, -180), (-90, 180)) - 0.001) <= myhaversine((90, -180), (-90, 180)) <= (haversine((90, -180), (-90, 180)) + 0.001)
+    assert (haversine((0, 0), (0, 0)) - 0.001) <= myhaversine((0, 0), (0, 0)) <= (haversine((0, 0), (0, 0)) + 0.001)
+    assert (haversine((45, -45), (90, -90)) - 0.001) <= myhaversine((45, -45), (90, -90)) <= (haversine((45, -45), (90,-90)) + 0.001)
+    assert (haversine((-54.8923, -0.1238901), (0.281379, 179.213890)) - 0.001) <= myhaversine((-54.8923, -0.1238901), (0.281379, 179.213890)) <= (haversine((-54.8923, -0.1238901), (0.281379, 179.213890)) + 0.001)
+    assert (haversine((78.8932, 114.2389), (-23.8901, -42.1389)) - 0.001) <= myhaversine((78.8932, 114.2389), (-23.8901, -42.1389)) <= (haversine((78.8932, 114.2389), (-23.8901, -42.1389)) + 0.001)
 
 
 def test_mysqrt():
