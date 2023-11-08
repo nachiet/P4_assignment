@@ -3,12 +3,10 @@ from haversine import haversine
 import numpy as np
 
 def test_myhaversine():
-    assert (haversine((-90, -180), (90, 180)) - 0.1) <= myhaversine((-90, -180), (90, 180)) <= (haversine((-90, -180), (90, 180)) + 0.1)
-    assert (haversine((90, -180), (-90, 180)) - 0.1) <= myhaversine((90, -180), (-90, 180)) <= (haversine((90, -180), (-90, 180)) + 0.1)
-    assert (haversine((0, 0), (0, 0)) - 0.1) <= myhaversine((0, 0), (0, 0)) <= (haversine((0, 0), (0, 0)) + 0.1)
-    assert (haversine((45, -45), (90, -90)) - 0.1) <= myhaversine((45, -45), (90, -90)) <= (haversine((45, -45), (90,-90)) + 0.1)
-    assert (haversine((-54.8923, -0.1238901), (0.281379, 179.213890)) - 0.1) <= myhaversine((-54.8923, -0.1238901), (0.281379, 179.213890)) <= (haversine((-54.8923, -0.1238901), (0.281379, 179.213890)) + 0.1)
-    assert (haversine((78.8932, 114.2389), (-23.8901, -42.1389)) - 0.1) <= myhaversine((78.8932, 114.2389), (-23.8901, -42.1389)) <= (haversine((78.8932, 114.2389), (-23.8901, -42.1389)) + 0.1)
+    coord_list1 = [(-90, -180), (90, -180), (0, 0), (45, -45), (-54.8923, -0.1238901), (78.8932, 114.2389)]
+    coord_list2 = [(90, 180), (-90, 180), (0, 0), (90, -90), (0.281379, 179.213890), (-23.8901, -42.1389)]
+    for coord1, coord2 in zip(coord_list1, coord_list2):
+        assert (haversine((coord1), (coord2)) - 0.1) <= myhaversine((coord1), (coord2)) <= (haversine((coord1), (coord2)) + 0.1)
 
 
 def test_mysqrt():
